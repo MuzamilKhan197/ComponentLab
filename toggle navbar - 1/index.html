@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="nav-header">
+                <h2>Coding <span class="highlight">Addict</span></h2>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="nav-items">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-social">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-behance"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-solid fa-gem"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const toggleBtn = document.querySelector(".nav-toggle");
+        const navItems = document.querySelector(".nav-items");
+        const social = document.querySelector(".social");
+
+        toggleBtn.addEventListener("click", () => {
+            navItems.classList.toggle("show");
+            social.classList.toggle("show");
+
+            const icon = toggleBtn.querySelector("i");
+
+            if (navItems.classList.contains("show")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-times");
+            } else {
+                icon.classList.remove("fa-times");
+                icon.classList.add("fa-bars");
+            }
+        });
+    </script>
+</body>
+
+</html>

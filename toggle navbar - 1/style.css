@@ -1,0 +1,144 @@
+:root {
+    --highlight-color: #71a5ce;
+    --social-color: #3f9ce2;
+    --background-color: #eef4fa;
+    --primary-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: "DM Sans", sans-serif;
+}
+
+.highlight {
+    color: var(--highlight-color);
+}
+
+nav {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    margin: 0 10px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-header h2 {
+    letter-spacing: 2px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.nav-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--highlight-color);
+}
+
+.nav-items ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: #222;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-items a:hover {
+    color: var(--highlight-color);
+}
+
+.nav-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-social a {
+    font-size: larger;
+    color: var(--social-color);
+    font-size: 1.3rem;  
+}
+
+.nav-social a:hover {
+    color: var(--highlight-color);
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        display: block;
+        padding: 0;
+    }
+
+    .nav-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-items {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 370px;
+        height: 100vh;
+        background: white;
+        transform: translateX(-100%);
+        transition: 0.3s ease;
+        padding-top: 5rem;
+    }
+
+    .nav-items.show {
+        transform: translateX(0);
+    }
+
+    .nav-items ul {
+        flex-direction: column;
+        gap: 2rem;
+        padding-left: 1.5rem;
+    }
+
+    .nav-items a {
+        font-size: 1.8rem;
+        color: #617d98;
+    }
+
+    .nav-social {
+        position: fixed;
+        bottom: 30px;
+        left: 100px;
+        transform: translateX(-500%);
+        transition: 0.3s ease;
+    }
+
+    .nav-social.show {
+        transform: translateX(0);
+    }
+}
